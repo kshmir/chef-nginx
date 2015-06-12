@@ -106,7 +106,7 @@ describe "nginx::configuration" do
     end
 
     let(:default_entries) do
-      %w[buffers general gzip logs performance proxy ssl_session timeouts]
+      %w[buffers general gzip logs performance proxy ssl_security ssl_session timeouts]
     end
 
     context "cookbook defaults" do
