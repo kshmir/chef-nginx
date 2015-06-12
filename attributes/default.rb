@@ -76,7 +76,7 @@ default["nginx"]["worker_connections"] = node["cpu"]["total"].to_i * 1024
 default["nginx"]["server_names_hash_bucket_size"] = 64
 
 default["nginx"]["conf_files"] = %w[
-  buffers general gzip logs performance proxy ssl_session timeouts
+  buffers general gzip logs performance proxy ssl_security ssl_session timeouts
 ]
 
 default["nginx"]["ssl_session_cache_enable"] = true
