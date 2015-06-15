@@ -57,8 +57,9 @@ default["nginx"]["tcp_nopush"]  = "on"
 default["nginx"]["tcp_nodelay"] = "off"
 
 default["nginx"]["proxy_set_headers"] = [
-  "X-Real-IP $remote_addr",
+  "X-Forwarded-Proto $scheme",
   "X-Forwarded-For $proxy_add_x_forwarded_for",
+  "X-Real-IP $remote_addr",
   "Host $http_host"
 ]
 default["nginx"]["proxy_redirect"] = "off"
