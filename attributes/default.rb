@@ -122,3 +122,10 @@ default["nginx"]["repository_sources"] = {
     "deb_src"      => true
   }
 }
+
+# Virtual host configuration
+
+default['nginx']['site']['host']           = "example.com"
+default['nginx']['site']['upstream_ports'] = ["3000"]
+default['nginx']['site']['ip']             = "0.0.0.0"
+default['nginx']['site']['listen']         = "80"

@@ -20,9 +20,9 @@ server {
   }
 
   <% if @access_log -%>
-  access_log <%= node["nginx"]["log_dir"] %>/<%= @host %>.access.log;
+  access_log <%= node["nginx"]["log_dir"] %>/<%= node['nginx']['site']['host'] %>.access.log;
   <% else -%>
   access_log off;
   <% end -%>
-  error_log  <%= node["nginx"]["log_dir"] %>/<%= @host %>.error.log error;
+  error_log  <%= node["nginx"]["log_dir"] %>/<%= node['nginx']['site']['host'] %>.error.log error;
 }
