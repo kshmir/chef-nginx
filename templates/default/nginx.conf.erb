@@ -6,8 +6,6 @@ daemon off;
 <% end -%>
 pid       <%= node["nginx"]["pid_file"] %>;
 
-access_log off;
-error_log off;
 
 events {
   worker_connections <%= node["nginx"]["worker_connections"] %>;
@@ -25,6 +23,9 @@ http {
 
   # additional config
   include <%= node["nginx"]["dir"] %>/conf.d/*.conf;
+
+  access_log off;
+  error_log off;
 
   # virtual hosting
   include <%= node["nginx"]["dir"] %>/sites-enabled/*;
