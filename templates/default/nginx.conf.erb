@@ -4,8 +4,6 @@ worker_processes <%= node["nginx"]["worker_processes"] %>;
 <% if node["nginx"]["daemon_disable"] -%>
 daemon off;
 <% end -%>
-
-error_log <%= node["nginx"]["log_dir"] %>/error.log;
 pid       <%= node["nginx"]["pid_file"] %>;
 
 events {
