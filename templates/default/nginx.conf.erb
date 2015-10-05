@@ -6,6 +6,9 @@ daemon off;
 <% end -%>
 pid       <%= node["nginx"]["pid_file"] %>;
 
+access_log off;
+error_log off;
+
 events {
   worker_connections <%= node["nginx"]["worker_connections"] %>;
   accept_mutex <%= node["nginx"]["worker_processes"].to_i > 1 ? "on" : "off" %>;
